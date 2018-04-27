@@ -10,6 +10,8 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   name: 'Login',
   data: () => ({
@@ -17,9 +19,14 @@ export default {
     password: ''
   }),
   methods: {
-    onSubmit () {
-      console.log(this.uid)
-      console.log(this.password)
+    ...mapActions(['login']),
+    async onSubmit () {
+      try {
+        let loginResult = await this.login({uid: this.uid, password: this.password})
+        console.log(loginResult)
+      } catch (err) {
+        console.error(err)
+      }
     }
   }
 }

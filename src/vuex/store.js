@@ -8,6 +8,7 @@ Vue.use(Vuex)
 
 const state = {
   uid: '',
+  errorState: '',
   isAuth: false
 }
 
