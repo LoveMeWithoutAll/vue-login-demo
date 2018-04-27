@@ -25,6 +25,7 @@ export default {
       const [userInfoResponse, isFinishedResponse] = await Promise.all([getUserInfoPromise, isFinishedPromise])
       if (userInfoResponse.data.length === 0) return 'noAuth'
       if (isFinishedResponse.data[0].CNT > 0) return 'done'
+      axios.defaults.headers.common['Authorization'] = userInfoResponse.jwt
       return userInfoResponse
     } catch (err) {
       console.error(err)

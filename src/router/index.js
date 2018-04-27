@@ -1,9 +1,15 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Login from '@/components/Login' // 로그인 컴포넌트를 import 한다
+import Login from '@/components/Login'
 import HelloWorld from '@/components/HelloWorld'
+import store from '@/vuex/store'
 
 Vue.use(Router)
+
+const requireAuth = () => (from, to, next) => {
+  if (store.getters.getIsAuth) return next()
+  next('/')
+}
 
 export default new Router({
   routes: [
@@ -15,7 +21,8 @@ export default new Router({
     {
       path: '/helloWorld',
       name: 'HelloWorld',
-      component: HelloWorld
+      component: HelloWorld,
+      beforeEnter: requireAuth()
     }
   ]
 })
