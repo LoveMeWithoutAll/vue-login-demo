@@ -1,6 +1,7 @@
 # vue-login-demo
 
 > vue login demo project
+> Source code of [my blog post](https://lovemewithoutall.github.io/it/vue-login-demo/)
 
 ## Build Setup
 
