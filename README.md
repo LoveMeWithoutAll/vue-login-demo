@@ -3,6 +3,8 @@
 > vue login demo project
 > Source code of [my blog post](https://lovemewithoutall.github.io/it/vue-login-demo/)
 
+> This repository is source code of [my blog post](https://lovemewithoutall.github.io/it/vue-login-demo/)
+
 ## Build Setup
 
 ``` bash
