@@ -28,7 +28,7 @@ export default {
       this.$validator.validateAll()
       if (!this.errors.any()) {
         try {
-          let loginResult = await this.login({uid: this.uid, password: this.password})
+          let loginResult = await this.login({ uid: this.uid, password: this.password })
           if (loginResult) this.goToPages()
         } catch (err) {
           console.error(err)
